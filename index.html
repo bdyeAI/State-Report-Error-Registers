@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>State Report Error Registers — Radford City Public Schools</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F8F7F3;
+    --paper-raised: #FFFFFF;
+    --ink: #1E2A32;
+    --ink-soft: #64717A;
+    --line: #DCE1E3;
+    --line-soft: #EAEDEE;
+    --action: #2C6E8C;
+    --action-bg: #E4EFF3;
+    --focus: #2C6E8C;
+    font-family: 'Public Sans', system-ui, sans-serif;
+    box-sizing: border-box;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181B;
+      --paper-raised: #1E2327;
+      --ink: #ECEEEF;
+      --ink-soft: #9AA6AC;
+      --line: #343C41;
+      --line-soft: #262D31;
+      --action: #7FC2DE;
+      --action-bg: #1E313A;
+    }
+  }
+  html, body { margin:0; padding:0; background: var(--paper); color: var(--ink); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 30px; }
+  .header-logo { display:block; height: clamp(76px, 11vw, 140px); width:auto; max-width: min(90vw, 440px); margin-bottom: 10px; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(24px, 4vw, 32px); margin: 0 0 6px; }
+  .sub { color: var(--ink-soft); font-size: 14.5px; max-width: 64ch; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 30px; }
+  a.card {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--paper-raised);
+    padding: 24px 22px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  a.card:hover { border-color: var(--action); transform: translateY(-1px); }
+  a.card.disabled { opacity: .55; cursor: default; pointer-events: none; }
+  .card .tag { font-family:'IBM Plex Mono', monospace; font-size: 11px; color: var(--action); text-transform: uppercase; letter-spacing: .04em; }
+  .card h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; margin: 6px 0 8px; }
+  .card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+  .card .go { margin-top: 14px; font-size: 12.5px; font-weight: 600; color: var(--action); }
+  .card.disabled .go { color: var(--ink-soft); }
+  footer { margin-top: 50px; font-size: 12px; color: var(--ink-soft); border-top: 1px solid var(--line-soft); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Radford City Public Schools, Commonwealth of Virginia" class="header-logo">
+    <h1>State Report Error Registers</h1>
+    <div class="sub">Live, shared trackers for VDOE state-reporting errors — pick a register below. Each one requires sign-in with your school division account.</div>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="https://bdyeai.github.io/rcps-src-error-register/" target="_blank" rel="noopener">
+      <div class="tag">SRC — Fall</div>
+      <h2>SRC Error Register</h2>
+      <p>Tracks Fatal errors and Warnings from the Fall SRC (Student Record Collection) submission, by school.</p>
+      <div class="go">Open register →</div>
+    </a>
+
+    <a class="card" href="https://bdyeai.github.io/rcps-msc-error-register/" target="_blank" rel="noopener">
+      <div class="tag">MSC</div>
+      <h2>MSC Error Register</h2>
+      <p>Tracks Fatal errors and Warnings from the MSC (Membership/Student Collection) submission, by school.</p>
+      <div class="go">Open register →</div>
+    </a>
+
+    <a class="card disabled" href="#" aria-disabled="true">
+      <div class="tag">SBAR</div>
+      <h2>SBAR Error Register</h2>
+      <p>Not yet public — currently only reachable on the internal server. This card will link out once SBAR has a public URL.</p>
+      <div class="go">Not yet available</div>
+    </a>
+  </div>
+
+  <footer>Radford City Public Schools &middot; VDOE state reporting tools</footer>
+</div>
+</body>
+</html>
